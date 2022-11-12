@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
+  
+  <title>SSM整合笔记 | DYG 的博客</title>
+
+  <link rel="shortcut icon" href="/images/favicon.png">
+  
+  <meta name="description" content="1.依赖导入默认使用Maven进行导入，在pom.xml下添加以下依赖 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677&lt;dependencies&amp;gt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSM整合笔记">
+<meta property="og:url" content="https://tinsdyg.github.io/2022/10/29/SSM%E6%95%B4%E5%90%88%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="DYG 的博客">
+<meta property="og:description" content="1.依赖导入默认使用Maven进行导入，在pom.xml下添加以下依赖 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677&lt;dependencies&amp;gt">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-10-29T06:22:06.000Z">
+<meta property="article:modified_time" content="2022-10-29T12:35:50.000Z">
+<meta property="article:author" content="DYG">
+<meta name="twitter:card" content="summary">
+
+  <meta name="keywords" content="">
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="DYG 的博客">
+  <meta name="msapplication-starturl" content="https://tinsdyg.github.io/2022/10/29/SSM%E6%95%B4%E5%90%88%E7%AC%94%E8%AE%B0/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="DYG 的博客">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  
+    <link rel="canonical" href="https://tinsdyg.github.io/2022/10/29/SSM%E6%95%B4%E5%90%88%E7%AC%94%E8%AE%B0/">
+  
+
+  
+  
+
+  
+  
+  
+
+  
+<link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/custom.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <script>if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <script>var a=localStorage.getItem("mdui-drawer-close");if(!a){document.getElementsByTagName("body")[0].className+=" mdui-drawer-body-left"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">DYG 的博客</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a style="display: none;" href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a>
+    
+  </div>
+</header>
+<div  class="mdui-dialog" id="search">
+  
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="请输入关键字"><input type="hidden" name="sitesearch" value="https://tinsdyg.github.io"></form>
+    <div class="search-result"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <script>var a=localStorage.getItem("mdui-drawer-close");if(a){document.getElementById("sidebar").className+=" mdui-drawer-close"};</script>
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/avatar.png" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">DYG</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i>多言须记</div>
+      </div>
+      
+        <div class="mdui-grid-tile-buttons">
+          <a href="mailto:dygticky@gmail.com" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'dygticky@gmail.com'}"><i class="mdui-icon material-icons">email</i></a>
+        </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">主页</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <script>var a=localStorage.getItem("mdui-collapse-item-0");if(a){document.getElementsByClassName("mdui-collapse-item")[0].className+=" mdui-collapse-item-open"};</script>
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">archive</i>
+        <div class="mdui-list-item-content">归档</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2022/10/">十月 2022<span class="mdui-ripple sidebar_archives-count">5</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <script>var a=localStorage.getItem("mdui-collapse-item-1");if(a){document.getElementsByClassName("mdui-collapse-item")[1].className+=" mdui-collapse-item-open"};</script>
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">class</i>
+        <div class="mdui-list-item-content">分类</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/categories/JavaWeb/">JavaWeb<span class="mdui-ripple sidebar_archives-count">4</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Resource/">Resource<span class="mdui-ripple sidebar_archives-count">1</span></a>
+        
+      </div>
+    </div>
+    <div style="display: none;" class="mdui-collapse-item">
+      <script>var a=localStorage.getItem("mdui-collapse-item-2");if(a){document.getElementsByClassName("mdui-collapse-item")[2].className+=" mdui-collapse-item-open"};</script>
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+        <div class="mdui-list-item-content">标签</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        
+        
+          <a href="javascript:;" class="mdui-list-item mdui-p-l-2 mdui-text-color-theme mdui-ripple" style="justify-content: center;">标签为空</a>
+        
+      </div>
+    </div>
+    <a href="/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">关于</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div style="display: none;" class="mdui-list" mdui-collapse="{accordion: true}">
+    
+    <div class="mdui-collapse-item">
+      <script>var a=localStorage.getItem("mdui-collapse-item-3");if(a){document.getElementsByClassName("mdui-collapse-item")[3].className+=" mdui-collapse-item-open"};</script>
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">友情链接</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        
+          <a href="javascript:;" class="mdui-list-item mdui-p-l-2 mdui-text-color-theme mdui-ripple" style="justify-content: center;">链接为空</a>
+        
+      </div>
+    </div>
+  </div>
+</aside>
+
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  
+<link rel="stylesheet" href="//cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <style>#main article .mdui-card-content .text-center{text-align:center!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="/images/random/material-4.png" style="max-height: 240px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">SSM整合笔记</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2022-10-29 / <i class="iconfont">&#xe601;</i> DYG</div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button style="display: none;" class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">发送到手机</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="//qr.liantu.com/api.php?w=246&m=10&text=https://tinsdyg.github.io/2022/10/29/SSM%E6%95%B4%E5%90%88%E7%AC%94%E8%AE%B0/">
+              
+            </li>
+          </ul>
+        
+        
+          <button style="display: none;"  class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="https://service.weibo.com/share/share.php?appkey=&title=SSM整合笔记&url=https://tinsdyg.github.io/2022/10/29/SSM%E6%95%B4%E5%90%88%E7%AC%94%E8%AE%B0/&pic=https://tinsdyg.github.io/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://twitter.com/intent/tweet?text=SSM整合笔记&url=https://tinsdyg.github.io/2022/10/29/SSM%E6%95%B4%E5%90%88%E7%AC%94%E8%AE%B0/&via=DYG" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://tinsdyg.github.io/2022/10/29/SSM%E6%95%B4%E5%90%88%E7%AC%94%E8%AE%B0/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://plus.google.com/share?url=https://tinsdyg.github.io/2022/10/29/SSM%E6%95%B4%E5%90%88%E7%AC%94%E8%AE%B0/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://tinsdyg.github.io/2022/10/29/SSM%E6%95%B4%E5%90%88%E7%AC%94%E8%AE%B0/&title=SSM整合笔记" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://connect.qq.com/widget/shareqq/index.html?site=DYG 的博客&title=SSM整合笔记&pics=https://tinsdyg.github.io/images/favicon.png&url=https://tinsdyg.github.io/2022/10/29/SSM%E6%95%B4%E5%90%88%E7%AC%94%E8%AE%B0/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://telegram.me/share/url?url=https://tinsdyg.github.io/2022/10/29/SSM%E6%95%B4%E5%90%88%E7%AC%94%E8%AE%B0/&text=SSM整合笔记" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <h2 id="1-依赖导入"><a href="#1-依赖导入" class="headerlink" title="1.依赖导入"></a>1.依赖导入</h2><p>默认使用Maven进行导入，在pom.xml下添加以下依赖</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependencies&gt;</span><br><span class="line">        &lt;!-- 包含了许多spring常用依赖 --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-context&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;5.3.23&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- SpringMvc --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-web&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;5.3.23&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;5.3.23&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- Spring JDBC --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;5.3.23&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- Mybatis --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.mybatis&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;mybatis&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;3.5.11&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">		&lt;!-- Mybatis和Spring整合的依赖 --&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.mybatis&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;mybatis-spring&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;2.0.7&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">		&lt;!-- fastjson springmvc实现RestController的原理就是依赖jackson实现 --&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;2.14.0-rc2&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- Mysql驱动 --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;8.0.30&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- Druid数据源 --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.alibaba&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;druid&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;1.2.14&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- Lombok 免于写实体类的getter和setter等常用方法 --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;lombok&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;1.18.24&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- Servlet --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;javax.servlet&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;servlet-api&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;2.5&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-配置Spring及Mybatis"><a href="#2-配置Spring及Mybatis" class="headerlink" title="2.配置Spring及Mybatis"></a>2.配置Spring及Mybatis</h2><p>在resources文件夹下创建applicationContext.xml (Spring配置) 、database.properties (数据库连接信息)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 扫描Service --&gt;</span><br><span class="line">&lt;context:component-scan base-package=&quot;com.demo.service&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 加载数据库连接配置文件 --&gt;</span><br><span class="line">&lt;context:property-placeholder location=&quot;classpath:database.properties&quot;/&gt;</span><br><span class="line">&lt;!-- 配置Druid数据源 --&gt;</span><br><span class="line">   &lt;bean class=&quot;com.alibaba.druid.pool.DruidDataSource&quot; id=&quot;dataSource&quot;&gt;</span><br><span class="line">       &lt;property name=&quot;url&quot; value=&quot;$&#123;jdbc.url&#125;&quot;/&gt;</span><br><span class="line">       &lt;property name=&quot;driverClassName&quot; value=&quot;$&#123;jdbc.drivername&#125;&quot;/&gt;</span><br><span class="line">       &lt;property name=&quot;username&quot; value=&quot;$&#123;jdbc.username&#125;&quot;/&gt;</span><br><span class="line">       &lt;property name=&quot;password&quot; value=&quot;$&#123;jdbc.password&#125;&quot;/&gt;</span><br><span class="line">   &lt;/bean&gt;</span><br><span class="line">&lt;!-- Mybatis配置 --&gt;</span><br><span class="line">   &lt;bean class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot; id=&quot;sqlSessionFactory&quot;&gt;</span><br><span class="line">       &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;</span><br><span class="line">       &lt;property name=&quot;typeAliasesPackage&quot; value=&quot;com.demo.entity.Student&quot;/&gt;</span><br><span class="line">	&lt;!--扫描 *Mapper.xml </span><br><span class="line">	&lt;property name=&quot;mapperLocations&quot; value=&quot;classpath:mapperxmlLocation&quot;/&gt;</span><br><span class="line">	--&gt;</span><br><span class="line">   &lt;/bean&gt;</span><br><span class="line">&lt;!-- Mybatis 扫描Mapper --&gt;</span><br><span class="line">   &lt;bean class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot; id=&quot;mapperScannerConfigurer&quot;&gt;</span><br><span class="line">       &lt;property name=&quot;sqlSessionFactoryBeanName&quot; value=&quot;sqlSessionFactory&quot;/&gt;</span><br><span class="line">       &lt;property name=&quot;basePackage&quot; value=&quot;com.demo.mapper&quot;/&gt;</span><br><span class="line">   &lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-SpringMvc配置"><a href="#3-SpringMvc配置" class="headerlink" title="3.SpringMvc配置"></a>3.SpringMvc配置</h2><p>在resources目录下创建spring-mvc.xml</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 扫描控制器Controller --&gt;</span><br><span class="line">&lt;context:component-scan base-package=&quot;com.demo.controller&quot;/&gt;</span><br><span class="line">&lt;!-- 启用驱动注解 --&gt;</span><br><span class="line">   &lt;mvc:annotation-driven/&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-配置web-xml"><a href="#4-配置web-xml" class="headerlink" title="4.配置web.xml"></a>4.配置web.xml</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- Spring配置文件导入 --&gt;</span><br><span class="line">&lt;context-param&gt;</span><br><span class="line">       &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</span><br><span class="line">       &lt;param-value&gt;classpath:applicationContext.xml&lt;/param-value&gt;</span><br><span class="line">   &lt;/context-param&gt;</span><br><span class="line">&lt;!-- 添加监听器，在web项目驱动时加载 --&gt;</span><br><span class="line">   &lt;listener&gt;</span><br><span class="line">       &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;</span><br><span class="line">   &lt;/listener&gt;</span><br><span class="line">&lt;!-- SpringMvc 配置文件导入 --&gt;</span><br><span class="line">   &lt;servlet&gt;</span><br><span class="line">       &lt;servlet-name&gt;dispatcherServlet&lt;/servlet-name&gt;</span><br><span class="line">       &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;</span><br><span class="line">       &lt;init-param&gt;</span><br><span class="line">           &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</span><br><span class="line">           &lt;param-value&gt;classpath:spring-mvc.xml&lt;/param-value&gt;</span><br><span class="line">       &lt;/init-param&gt;</span><br><span class="line">   &lt;/servlet&gt;</span><br><span class="line">&lt;!-- 将所有请求交给SpringMvc处理 --&gt;</span><br><span class="line">   &lt;servlet-mapping&gt;</span><br><span class="line">       &lt;servlet-name&gt;dispatcherServlet&lt;/servlet-name&gt;</span><br><span class="line">       &lt;url-pattern&gt;/&lt;/url-pattern&gt;</span><br><span class="line">   &lt;/servlet-mapping&gt;</span><br><span class="line">&lt;!-- 添加编码过滤器，强制把请求和响应编码设置为UTF-8 --&gt;</span><br><span class="line">&lt;filter&gt;</span><br><span class="line">       &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;</span><br><span class="line">       &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;</span><br><span class="line">       &lt;init-param&gt;</span><br><span class="line">           &lt;param-name&gt;encoding&lt;/param-name&gt;</span><br><span class="line">           &lt;param-value&gt;UTF-8&lt;/param-value&gt;</span><br><span class="line">       &lt;/init-param&gt;</span><br><span class="line">       &lt;init-param&gt;</span><br><span class="line">           &lt;param-name&gt;forceRequestEncoding&lt;/param-name&gt;</span><br><span class="line">           &lt;param-value&gt;true&lt;/param-value&gt;</span><br><span class="line">       &lt;/init-param&gt;</span><br><span class="line">       &lt;init-param&gt;</span><br><span class="line">           &lt;param-name&gt;forceResponseEncoding&lt;/param-name&gt;</span><br><span class="line">           &lt;param-value&gt;true&lt;/param-value&gt;</span><br><span class="line">       &lt;/init-param&gt;</span><br><span class="line">   &lt;/filter&gt;</span><br><span class="line">   &lt;filter-mapping&gt;</span><br><span class="line">       &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;</span><br><span class="line">       &lt;url-pattern&gt;/*&lt;/url-pattern&gt;</span><br><span class="line">   &lt;/filter-mapping&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>至此，达成了SSM的简单整合。</p>
+<h2 id="Tip：-Mapper-xml文件扫描问题"><a href="#Tip：-Mapper-xml文件扫描问题" class="headerlink" title="Tip：*Mapper.xml文件扫描问题"></a>Tip：*Mapper.xml文件扫描问题</h2><p>由于Maven项目在编译中会忽略java目录下的xml文件，因此需要手动设置Maven使其不扫描指定文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- pom.xml文件末尾添加 --&gt;</span><br><span class="line">&lt;build&gt;</span><br><span class="line">    &lt;resources&gt;</span><br><span class="line">        &lt;resource&gt;</span><br><span class="line">            &lt;directory&gt;src/main/java&lt;/directory&gt;</span><br><span class="line">            &lt;includes&gt;</span><br><span class="line">                &lt;include&gt;**/*.xml&lt;/include&gt;</span><br><span class="line">            &lt;/includes&gt;</span><br><span class="line">            &lt;filtering&gt;false&lt;/filtering&gt;</span><br><span class="line">        &lt;/resource&gt;</span><br><span class="line">    &lt;/resources&gt;</span><br><span class="line">&lt;/build&gt;</span><br></pre></td></tr></table></figure>
+
+<p>或者在resources目录下创建和mapper文件相同目录放置*Mapper.xml文件</p>
+
+      
+      <blockquote style="display: none;">
+        
+        <strong>本文链接：</strong><br><a href="https://tinsdyg.github.io/2022/10/29/SSM%E6%95%B4%E5%90%88%E7%AC%94%E8%AE%B0/">https://tinsdyg.github.io/2022/10/29/SSM整合笔记/</a>
+      </blockquote>
+    </div>
+    <footer class="mdui-card-actions">
+      
+        <a class="mdui-ripple article_categories-link" href="/categories/JavaWeb/">JavaWeb</a>
+      
+      
+    </footer>
+    
+  </article>
+  
+<script src="//cdn.bootcdn.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+      <a rel="prev" class="extend prev" href="/2022/10/29/SSM%E6%95%B4%E5%90%88%E9%97%AE%E9%A2%98/">
+        <button aria-label="prev" class="mdui-btn mdui-btn-raised mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></button>
+        <span class="mdui-p-x-3" mdui-tooltip="{content: 'SSM整合问题'}">上一篇</span>
+      </a>
+    
+    <div class="spacer"></div>
+    
+  </nav>
+
+
+
+
+
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+      <a href="https://github.com/tinsdyg/" target="_blank" class="mdui-btn mdui-btn-icon mdui-text-color-theme-a100"><i class="mdui-icon iconfont">&#xe7ab;</i></a>
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2022 DYG<br>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a>
+    
+  </div>
+</footer>
+
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  
+  
+<script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+
+  
+<script src="/custom.js"></script>
+
+</body>
+</html>
