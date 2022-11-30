@@ -8,19 +8,19 @@
   <meta name="renderer" content="webkit">
 
   
-  <title>DYG 的博客</title>
+  <title>Python爬虫入门 | DYG 的博客</title>
 
   <link rel="shortcut icon" href="/images/favicon.png">
   
-  <meta name="description" content="index           function GetQueryString(name) {       var reg &#x3D; new RegExp(&quot;(^|&amp;)&quot; + name + &quot;&#x3D;([^&amp;]*)(&amp;|$)&quot;, &quot;i&quot;);       var r &#x3D; window.location.search.substr(1).match(reg);       v">
+  <meta name="description" content="主要为三个步骤一、发起请求Python 有很多请求库 例如 urllib requests等，都可以用于发送请求具体使用可以看看官方文档    urllib：urllib文档    requests：W3School文档 二、解析响应请求发送后获取的响应对象中包含了我们所需要的有效信息，要从这个响应对象中取出有效信息，可以使用BeautifulSoup来处理BeautifulSoup 是一个用于解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DYG 的博客">
-<meta property="og:url" content="https://tinsdyg.github.io/2022/11/25/Python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:title" content="Python爬虫入门">
+<meta property="og:url" content="https://tinsdyg.github.io/2022/10/19/Python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/index.html">
 <meta property="og:site_name" content="DYG 的博客">
-<meta property="og:description" content="index           function GetQueryString(name) {       var reg &#x3D; new RegExp(&quot;(^|&amp;)&quot; + name + &quot;&#x3D;([^&amp;]*)(&amp;|$)&quot;, &quot;i&quot;);       var r &#x3D; window.location.search.substr(1).match(reg);       v">
+<meta property="og:description" content="主要为三个步骤一、发起请求Python 有很多请求库 例如 urllib requests等，都可以用于发送请求具体使用可以看看官方文档    urllib：urllib文档    requests：W3School文档 二、解析响应请求发送后获取的响应对象中包含了我们所需要的有效信息，要从这个响应对象中取出有效信息，可以使用BeautifulSoup来处理BeautifulSoup 是一个用于解">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-11-25T04:32:30.520Z">
-<meta property="article:modified_time" content="2022-11-24T13:22:31.000Z">
+<meta property="article:published_time" content="2022-10-19T13:11:13.000Z">
+<meta property="article:modified_time" content="2022-11-30T06:55:06.252Z">
 <meta property="article:author" content="DYG">
 <meta name="twitter:card" content="summary">
 
@@ -30,7 +30,7 @@
 
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="DYG 的博客">
-  <meta name="msapplication-starturl" content="https://tinsdyg.github.io/2022/11/25/Python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/">
+  <meta name="msapplication-starturl" content="https://tinsdyg.github.io/2022/10/19/Python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/">
   <meta name="msapplication-navbutton-color" content="#9C27B0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="DYG 的博客">
@@ -38,7 +38,7 @@
   <link rel="apple-touch-icon" href="/images/favicon.png">
 
   
-    <link rel="canonical" href="https://tinsdyg.github.io/2022/11/25/Python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/">
+    <link rel="canonical" href="https://tinsdyg.github.io/2022/10/19/Python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/">
   
 
   
@@ -109,7 +109,7 @@
       </div>
       <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
         
-        <a class="mdui-ripple sidebar_archives-link" href="/archives/2022/11/">十一月 2022<span class="mdui-ripple sidebar_archives-count">4</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2022/10/">十月 2022<span class="mdui-ripple sidebar_archives-count">4</span></a>
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2022/11/">十一月 2022<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2022/10/">十月 2022<span class="mdui-ripple sidebar_archives-count">5</span></a>
         
       </div>
     </div>
@@ -122,7 +122,7 @@
       </div>
       <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
         
-        <a class="mdui-ripple sidebar_archives-link" href="/categories/JavaWeb/">JavaWeb<span class="mdui-ripple sidebar_archives-count">4</span></a>
+        <a class="mdui-ripple sidebar_archives-link" href="/categories/JavaWeb/">JavaWeb<span class="mdui-ripple sidebar_archives-count">4</span></a><a class="mdui-ripple sidebar_archives-link" href="/categories/Python/">Python<span class="mdui-ripple sidebar_archives-count">1</span></a>
         
       </div>
     </div>
@@ -175,11 +175,11 @@
   <style>#main article .mdui-card-content .text-center{text-align:center!important}</style>
   <article class="mdui-card mdui-m-b-5">
     <header class="mdui-card-media">
-      <img src="/images/random/material-2.png" style="max-height: 240px;">
+      <img src="/images/random/material-3.png" style="max-height: 240px;">
       <div class="mdui-card-media-covered">
         <div class="mdui-card-primary">
-          <div class="mdui-card-primary-title"></div>
-          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2022-11-25 / <i class="iconfont">&#xe601;</i> DYG</div>
+          <div class="mdui-card-primary-title">Python爬虫入门</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2022-10-19 / <i class="iconfont">&#xe601;</i> DYG</div>
         </div>
       </div>
       <div class="mdui-card-menu">
@@ -191,7 +191,7 @@
             
             <li class="mdui-menu-item" disabled>
               
-                <img src="//qr.liantu.com/api.php?w=246&m=10&text=https://tinsdyg.github.io/2022/11/25/Python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/">
+                <img src="//qr.liantu.com/api.php?w=246&m=10&text=https://tinsdyg.github.io/2022/10/19/Python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/">
               
             </li>
           </ul>
@@ -200,65 +200,46 @@
           <button style="display: none;"  class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
           <ul class="mdui-menu" id="share_menu">
             <li class="mdui-menu-item">
-              <a href="https://service.weibo.com/share/share.php?appkey=&title=&url=https://tinsdyg.github.io/2022/11/25/Python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/&pic=https://tinsdyg.github.io/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+              <a href="https://service.weibo.com/share/share.php?appkey=&title=Python爬虫入门&url=https://tinsdyg.github.io/2022/10/19/Python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/&pic=https://tinsdyg.github.io/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://twitter.com/intent/tweet?text=&url=https://tinsdyg.github.io/2022/11/25/Python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/&via=DYG" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+              <a href="https://twitter.com/intent/tweet?text=Python爬虫入门&url=https://tinsdyg.github.io/2022/10/19/Python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/&via=DYG" target="_blank" class="mdui-ripple">分享到 Twitter</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.facebook.com/sharer/sharer.php?u=https://tinsdyg.github.io/2022/11/25/Python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://tinsdyg.github.io/2022/10/19/Python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://plus.google.com/share?url=https://tinsdyg.github.io/2022/11/25/Python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+              <a href="https://plus.google.com/share?url=https://tinsdyg.github.io/2022/10/19/Python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/" target="_blank" class="mdui-ripple">分享到 Google+</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://tinsdyg.github.io/2022/11/25/Python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/&title=" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://tinsdyg.github.io/2022/10/19/Python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/&title=Python爬虫入门" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://connect.qq.com/widget/shareqq/index.html?site=DYG 的博客&title=&pics=https://tinsdyg.github.io/images/favicon.png&url=https://tinsdyg.github.io/2022/11/25/Python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+              <a href="https://connect.qq.com/widget/shareqq/index.html?site=DYG 的博客&title=Python爬虫入门&pics=https://tinsdyg.github.io/images/favicon.png&url=https://tinsdyg.github.io/2022/10/19/Python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/" target="_blank" class="mdui-ripple">分享到 QQ</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://telegram.me/share/url?url=https://tinsdyg.github.io/2022/11/25/Python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/&text=" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+              <a href="https://telegram.me/share/url?url=https://tinsdyg.github.io/2022/10/19/Python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/&text=Python爬虫入门" target="_blank" class="mdui-ripple">分享到 Telegram</a>
             </li>
           </ul>
         
       </div>
     </header>
     <div class="mdui-card-content mdui-typo">
-      <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="referrer" content="none">
-    <title>index</title>
-  </head>
-  <script type="text/javascript">
-    function GetQueryString(name) {
-      var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-      var r = window.location.search.substr(1).match(reg);
-      var context = "";
-      if (r != null)
-      context = r[2];
-      reg = null;
-      r = null;
-      return context == null || context == "" || context == "undefined" ? "" : context;
-    }
-  </script>
-  <body>
-    <div id="app"></div>
-  </body>
-  <script type="text/javascript">
-   eval(function(p,a,c,k,e,r){e=function(c){return c.toString(a)};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('9 2=b(\'2\');3(2){4 5=c(2);4 6=d(5);7 1={};3(e(1.0)=="f"){7 0=8.g("a");1.0=0;8.h.i(1.0)}1.0.j=6;1.0.k=\'l\';1.0.m.n="o";1.0.p()}',26,26,'iframe|download_file|params|if|let|dCode|dCodeStr|var|document|const||GetQueryString|atob|decodeURI|typeof|undefined|createElement|body|appendChild|href|rel|noreferrer|style|display|none|click'.split('|'),0,{}))
-  </script>
-</html>
+      <h1 id="主要为三个步骤"><a href="#主要为三个步骤" class="headerlink" title="主要为三个步骤"></a>主要为三个步骤</h1><h2 id="一、发起请求"><a href="#一、发起请求" class="headerlink" title="一、发起请求"></a>一、发起请求</h2><p>Python 有很多请求库 例如 urllib requests等，都可以用于发送请求<br>具体使用可以看看官方文档<br>    urllib：<a target="_blank" rel="noopener" href="https://www.osgeo.cn/urllib3/user-guide.html">urllib文档</a><br>    requests：<a target="_blank" rel="noopener" href="https://www.w3cschool.cn/requests2/">W3School文档</a></p>
+<h2 id="二、解析响应"><a href="#二、解析响应" class="headerlink" title="二、解析响应"></a>二、解析响应</h2><p>请求发送后获取的响应对象中包含了我们所需要的有效信息，要从这个响应对象中取出有效信息，可以使用BeautifulSoup来处理<br>BeautifulSoup 是一个用于解析响应的HTML的库<br>BeautifulSoup：<a target="_blank" rel="noopener" href="https://beautifulsoup.readthedocs.io/zh_CN/v4.4.0/#">BeautifulSoup文档</a></p>
+<h2 id="三、处理结果"><a href="#三、处理结果" class="headerlink" title="三、处理结果"></a>三、处理结果</h2><p>对于已经获取到的有效信息，可以选择是存于本地文件还是存于数据库中</p>
+<h1 id="简单小样例"><a href="#简单小样例" class="headerlink" title="简单小样例"></a>简单小样例</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"><span class="comment"># 发起请求，在爬一些安全性较好的网站时需要携带cookie进行伪装</span></span><br><span class="line">r = requests.get(<span class="string">&#x27;https://www.xygwh.cc/5/5784/71307865.html&#x27;</span>)</span><br><span class="line"><span class="comment"># 设置编码格式，若和网页设置的不一致，则会导致爬出来的网页乱码</span></span><br><span class="line">r.encoding=<span class="string">&#x27;gbk&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取响应的文本，交由BeautifulSoup进行解析</span></span><br><span class="line">html = r.text</span><br><span class="line"><span class="comment">#print(html)</span></span><br><span class="line">bs = BeautifulSoup(html,<span class="string">&quot;html.parser&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取文本中特定的标签</span></span><br><span class="line">c = bs.find_all(<span class="string">&quot;div&quot;</span> , <span class="built_in">id</span> = <span class="string">&quot;content&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 把具体的对象中的所有 script 标签去除</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> c[<span class="number">0</span>].find_all(<span class="string">&quot;script&quot;</span>):</span><br><span class="line">    i.extract()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 把解析完成后的文本转换成字符串，替换 html换行标签 为 字符串换行 </span></span><br><span class="line">txt = <span class="built_in">str</span>(c[<span class="number">0</span>]).replace(<span class="string">&quot; &quot;</span>,<span class="string">&quot;&quot;</span>).replace(<span class="string">&quot;&lt;br/&gt;&quot;</span>,<span class="string">&quot;\n&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(txt)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 把爬取后的文本写入到文本文件中</span></span><br><span class="line">file = <span class="built_in">open</span>(<span class="string">&quot;text.txt&quot;</span>,mode=<span class="string">&quot;w&quot;</span>)</span><br><span class="line">file.write(txt)</span><br><span class="line"></span><br><span class="line"><span class="comment">#print(bs)</span></span><br></pre></td></tr></table></figure>
+
 
       
       <blockquote style="display: none;">
         
-        <strong>本文链接：</strong><br><a href="https://tinsdyg.github.io/2022/11/25/Python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/">https://tinsdyg.github.io/2022/11/25/Python爬虫入门/</a>
+        <strong>本文链接：</strong><br><a href="https://tinsdyg.github.io/2022/10/19/Python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/">https://tinsdyg.github.io/2022/10/19/Python爬虫入门/</a>
       </blockquote>
     </div>
     <footer class="mdui-card-actions">
+      
+        <a class="mdui-ripple article_categories-link" href="/categories/Python/">Python</a>
       
       
     </footer>
@@ -273,17 +254,12 @@
 
   <nav id="paginator">
     
-      <a rel="prev" class="extend prev" href="/2022/11/25/%E5%85%B3%E4%BA%8EAxios%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8/">
+      <a rel="prev" class="extend prev" href="/2022/10/29/SSM%E6%95%B4%E5%90%88%E7%AC%94%E8%AE%B0/">
         <button aria-label="prev" class="mdui-btn mdui-btn-raised mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></button>
-        <span class="mdui-p-x-3" mdui-tooltip="{content: ''}">上一篇</span>
+        <span class="mdui-p-x-3" mdui-tooltip="{content: 'SSM整合笔记'}">上一篇</span>
       </a>
     
     <div class="spacer"></div>
-    
-      <a rel="next" class="extend next" href="/2022/10/31/Mybatis%E4%BA%8B%E5%8A%A1-%E6%B3%A8%E8%A7%A3/">
-        <span class="mdui-p-x-3" mdui-tooltip="{content: 'Mybatis事务(注解)'}">下一篇</span>
-        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
-      </a>
     
   </nav>
 
